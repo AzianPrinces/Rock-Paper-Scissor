@@ -1,12 +1,17 @@
 package rps.gui;
 
 // Project imports
+import io.github.palexdev.materialfx.controls.MFXListView;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import rps.bll.game.*;
 import rps.bll.player.*;
 
 // Java imports
-import java.util.Random;
-import java.util.Scanner;
+import java.net.URL;
+import java.util.*;
 
 /**
  * Console implementation of the RPS game
@@ -18,7 +23,14 @@ public class ConsoleApp {
     /**
      * Starts the game
      */
+    @FXML
+    private MFXListView<String> log;
+
+    private ObservableList<String> items;
+
     public void startGame() {
+
+
         System.out.println("Welcome to the classic Rock, Paper and Scissor game!");
         Scanner keyboard = new Scanner(System.in);
 
@@ -120,4 +132,9 @@ public class ConsoleApp {
                 statusText + result.getLoserPlayer().getPlayerName() +
                 " (" + result.getLoserMove() + ")!";
     }
-}
+
+
+
+
+    }
+
