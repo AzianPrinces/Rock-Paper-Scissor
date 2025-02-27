@@ -10,7 +10,7 @@
       <MFXButton fx:id="btnRock" layoutX="33.0" layoutY="149.0" onAction="#handleRock" prefHeight="38.0" prefWidth="76.0" text="ROCK" />
       <MFXButton fx:id="btnPaper" layoutX="33.0" layoutY="208.0" onAction="#handlePaper" prefHeight="38.0" prefWidth="76.0" text="PAPER" />
       <MFXButton fx:id="btnScissor" layoutX="33.0" layoutY="276.0" onAction="#handleScissor" prefHeight="38.0" prefWidth="76.0" text="Scissor" />
-      <MFXTextField fx:id="nameField" layoutX="25.0" layoutY="41.0" />
+      <MFXTextField fx:id="nameField" layoutX="25.0" layoutY="41.0" prefHeight="49.0" prefWidth="91.0" />
       <MFXButton layoutX="46.0" layoutY="102.0" onAction="#onButtonSave" text="save" />
       <MFXListView fx:id="log" layoutX="146.0" layoutY="25.0" prefHeight="350.0" prefWidth="437.0" />
    </children>

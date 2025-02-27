@@ -69,28 +69,31 @@ public class GameViewController implements Initializable {
         String playerName = nameField.getText();
 
         if(playerName != null && !playerName.isEmpty()) {
-            log.getItems().add("Welcome player " + playerName);
             nameField.clear();
+
+            // Create the Player objects
+            IPlayer human = new Player(playerName, PlayerType.Human);
+            IPlayer bot = new Player(getRandomBotName(), PlayerType.AI);
+
+            // Initialize the GameManager with these players
+            ge = new GameManager(human, bot);
+
+            // Once we have a valid game, we can enable the move buttons
+            btnRock.setDisable(false);
+            btnPaper.setDisable(false);
+            btnScissor.setDisable(false);
+
+            // Clear any old results
+            log.getItems().clear();
+            // Optionally, you could also show a "Game started" message
+            log.getItems().add("Welcome player " + playerName);
+            log.getItems().add("Game started! Playing against " + bot.getPlayerName());
+
         } else {
             log.getItems().add("Please enter a player name");
         }
 
-        // Create the Player objects
-        IPlayer human = new Player(playerName, PlayerType.Human);
-        IPlayer bot = new Player(getRandomBotName(), PlayerType.AI);
 
-        // Initialize the GameManager with these players
-        ge = new GameManager(human, bot);
-
-        // Once we have a valid game, we can enable the move buttons
-        btnRock.setDisable(false);
-        btnPaper.setDisable(false);
-        btnScissor.setDisable(false);
-
-        // Clear any old results
-        log.getItems().clear();
-        // Optionally, you could also show a "Game started" message
-        log.getItems().add("Game started! Playing against " + bot.getPlayerName());
 
 
     }
